@@ -72,7 +72,7 @@ jobs:
               "$IMAGE"
             docker image prune -f
 
-            curl --fail --silent --show-error "${{ env.APP_SCHEME }}://${{ env.DEPLOY_HOST }}:${{ env.APP_PORT }}/" >/dev/null
+            curl --fail --silent --show-error "${{ env.APP_SCHEME }}://${{ env.DEPLOY_HOST }}:${{ env.APP_EXPOSED_PORT }}/" >/dev/null
 
 
 
@@ -89,4 +89,4 @@ jobs:
           repository: ${{ secrets.QA_REPO_OWNER }}/${{ secrets.QA_REPO_NAME }}
           event-type: run-qa-tests
           client-payload: |
-            {"app_url":"${{ env.APP_SCHEME }}://${{ env.DEPLOY_HOST }}:${{ env.APP_PORT }}","username":"${{ secrets.APP_USERNAME }}","password":"${{ secrets.APP_PASSWORD }}"}
+            {"app_url":"${{ env.APP_SCHEME }}://${{ env.DEPLOY_HOST }}:${{ env.APP_EXPOSED_PORT }}","username":"${{ secrets.APP_USERNAME }}","password":"${{ secrets.APP_PASSWORD }}"}
