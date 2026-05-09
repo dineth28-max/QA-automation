@@ -14,6 +14,7 @@ env:
   DEPLOY_HOST: 192.99.71.97
   VM_USER: ubuntu
   VM_PORT: '22'
+  APP_EXPOSED_PORT: '8081'
 
 jobs:
   build_and_push:
@@ -67,7 +68,7 @@ jobs:
             docker run -d \
               --name "${{ env.CONTAINER_NAME }}" \
               --restart unless-stopped \
-              -p "${{ env.APP_PORT }}:${{ env.APP_PORT }}" \
+              -p "${{ env.APP_EXPOSED_PORT }}:${{ env.APP_PORT }}" \
               "$IMAGE"
             docker image prune -f
 
