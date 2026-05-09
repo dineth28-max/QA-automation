@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: mango-drink
+  IMAGE_NAME: mango-drinksserviceS
   CONTAINER_NAME: mango-drink
   APP_PORT: '6666'
   DEPLOY_HOST: 192.99.71.97
