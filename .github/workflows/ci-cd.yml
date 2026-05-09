@@ -15,6 +15,8 @@ env:
   VM_USER: ubuntu
   VM_PORT: '22'
   APP_EXPOSED_PORT: '8081'
+  QA_REPO_OWNER: dineth28-max
+  QA_REPO_NAME: QA-automation-2
 
 jobs:
   build_and_push:
@@ -86,7 +88,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.QA_TRIGGER_TOKEN }}
-          repository: ${{ secrets.QA_REPO_OWNER }}/${{ secrets.QA_REPO_NAME }}
+          repository: ${{ env.QA_REPO_OWNER }}/${{ env.QA_REPO_NAME }}
           event-type: run-qa-tests
           client-payload: |
             {"app_url":"${{ env.APP_SCHEME }}://${{ env.DEPLOY_HOST }}:${{ env.APP_EXPOSED_PORT }}","username":"${{ secrets.APP_USERNAME }}","password":"${{ secrets.APP_PASSWORD }}"}
