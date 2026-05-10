@@ -49,5 +49,5 @@ on:
 
 The QA workflow can access the dispatched payload via `github.event.client_payload.app_url`, `github.event.client_payload.username`, and `github.event.client_payload.password`.
 
-Security note: `QA_TRIGGER_TOKEN` should be a minimal-scope PAT stored as a repository secret in this repo. Do NOT hardcode tokens in workflows.
+Security note: `QA_TRIGGER_TOKEN` should be a minimal-scope PAT stored as a repository secret in this repo. Do NOT hardcode tokens in workflows.nn
 wwssssss
