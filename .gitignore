@@ -11,7 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
-/QA-automation/
+/QA-automation/ 
+/QA-automation/mango-drink.postman_collection.json
+/QA-automation/mango-drink.postman_environment.json
 
 # Editor directories and files
 .vscode/*
@@ -23,3 +25,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.qa-ci.yml
